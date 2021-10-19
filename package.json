@@ -8,6 +8,10 @@
     "lint": "vue-cli-service lint",
     "package": "vue-cli-service build --target lib --name text-tooltip ./src/components/index.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dzc314/text-tooltip"
+  },
   "main": "./dist/text-tooltip.common.js",
   "files": [
     "dist/*",
