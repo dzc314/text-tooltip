@@ -1,20 +1,54 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+    <div style="width: 100px;">
+      <TextTooltip
+        content="Welcome to Your Vue.js + TypeScript App"
+        placement="bottom"
+      />
+      <TextTooltip
+        content="Welcome to Your Vue.js + TypeScript App"
+        :line="2"
+      />
+    </div>
+    <TextTooltip style="width: 200px;" content="Welcome ！" />
+    <TextTooltip
+      style="width: 200px;"
+      content="Welcome to Your Vue.js + TypeScript App"
+    />
+    <TextTooltip
+      style="width: 100px;"
+      content="Welcome to TextTooltip! "
+      :line="2"
+    />
+    <TextTooltip
+      class="content"
+      :content="content"
+      :line="3"
+      popperClass="popper-class"
+    />
   </div>
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
-import HelloWorld from './components/HelloWorld.vue';
+import { Component, Vue } from "vue-property-decorator";
+import TextTooltip from "@/components/text-tooltip.vue";
 
 @Component({
   components: {
-    HelloWorld,
+    TextTooltip,
   },
 })
-export default class App extends Vue {}
+export default class App extends Vue {
+  content = "";
+  mounted() {
+    setTimeout(() => {
+      this.content = `Welcome`;
+    }, 2000);
+    setTimeout(() => {
+      this.content = `Welcome to TextTooltip! Welcome to TextTooltip! Welcome to TextTooltip! `;
+    }, 4000);
+  }
+}
 </script>
 
 <style>
@@ -25,5 +59,12 @@ export default class App extends Vue {}
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+.content {
+  width: 150px;
+  background-color: yellow;
+}
+.popper-class {
+  width: 200px;
 }
 </style>
