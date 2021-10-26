@@ -17,6 +17,7 @@ import { Tooltip } from "element-ui";
 Vue.use(Tooltip);
 import "./text-tooltip.scss";
 @Component({
+  name: "TextTooltip",
   props: {
     content: {
       type: String,

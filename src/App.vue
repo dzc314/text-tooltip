@@ -31,11 +31,11 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import TextTooltip from "@/components/text-tooltip.vue";
+// import TextTooltip from "@/components/text-tooltip.vue";
 
 @Component({
   components: {
-    TextTooltip,
+    // TextTooltip,
   },
 })
 export default class App extends Vue {

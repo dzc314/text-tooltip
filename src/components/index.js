@@ -6,6 +6,7 @@ const Components = {
 };
 
 Object.keys(Components).forEach(name => {
+  console.log(name);
   Vue.component(name, Components[name]);
 });
 
